@@ -8,7 +8,10 @@ from models.Database_orm import database , Person_Details , Session , take_photo
 
 def Convert(temp , temp2):
     try :
-        os.system("cd D:/Project/DB_Image")
+        filename = f"{os.getcwd()}/DB_Image/{temp}.jpg"
+        with open(filename,"wb") as f:
+            img = f.write(temp2)
+        f.close()
     except:
         parent = f"{os.getcwd()}/"
         path = os.path.join(parent , "DB_Image")
